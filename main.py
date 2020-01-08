@@ -15,10 +15,13 @@ class MyWidget(QMainWindow, Ui_MainWindow):
         self.update()
 
     def paintEvent(self, event):
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
         res = random.randint(5, 200)
         qp = QPainter()
         qp.begin(self)
-        qp.setBrush(QColor('yellow'))
+        qp.setBrush(QColor(red, green, blue))
         qp.drawEllipse(100, 100, res, res)
         qp.end()
 
